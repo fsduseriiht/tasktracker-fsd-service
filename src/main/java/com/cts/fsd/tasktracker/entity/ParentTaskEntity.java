@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author Amitabha Das [420652]
+ *
+ */
 @Entity
 @Table(name = "PARENT_TASK_TABLE")
 public class ParentTaskEntity implements Serializable {

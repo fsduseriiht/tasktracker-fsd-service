@@ -18,6 +18,10 @@ import com.cts.fsd.tasktracker.service.TaskService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * @author Amitabha Das [420652]
+ *
+ */
 @RestController
 @RequestMapping("/task")
 @CrossOrigin("*")
@@ -26,7 +30,10 @@ public class TaskTrackerController {
 	@Autowired
 	TaskService taskService;
 	
-	
+	/**
+	 * createTaskDump() is used to create database dump for task table if it does not exist in database
+	 * @return ResponseEntity<String>
+	 */
 	@RequestMapping(value = "/dump", method = RequestMethod.GET)
 	public ResponseEntity<String> createTaskDump() {
 		Gson gson = new Gson();
@@ -44,6 +51,10 @@ public class TaskTrackerController {
 	}
 	
 	
+	/**
+	 * listTasks() is used to display all records in task table db
+	 * @return ResponseEntity<List<TaskPOJO>>
+	 */
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<List<TaskPOJO>> listTasks() {
 		
@@ -56,6 +67,11 @@ public class TaskTrackerController {
 	
 	
 	
+	/**
+	 * createTask() is used to create a single record in task table in db
+	 * @param taskPOJO
+	 * @return ResponseEntity<String>
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
 	public ResponseEntity<String> createTask(
 							@RequestBody TaskPOJO taskPOJO	) {
@@ -75,6 +91,12 @@ public class TaskTrackerController {
 		return new ResponseEntity<String>("New Task Saved to Database..." + dbResponse , HttpStatus.OK);
 	}
 	
+	/**
+	 * updateTask() is used to update the task table single record in db 
+	 * @param taskId
+	 * @param taskPOJO
+	 * @return ResponseEntity<String>
+	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = "application/json")
 	public ResponseEntity<String> updateTask(
 												@PathVariable(value = "id") int taskId , 
@@ -97,6 +119,11 @@ public class TaskTrackerController {
 	
 	
 	
+	/**
+	 * deleteTask() is used to delete record from TaskTable in db
+	 * @param taskId
+	 * @return ResponseEntity<String>
+	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<String> deleteTask( 
 											@PathVariable(value = "id") int taskId ) {

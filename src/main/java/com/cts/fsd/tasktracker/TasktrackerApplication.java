@@ -5,6 +5,10 @@ import java.io.IOException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author Amitabha Das [420652]
+ *
+ */
 @SpringBootApplication
 public class TasktrackerApplication {
 	public static void main(String[] args) throws IOException {

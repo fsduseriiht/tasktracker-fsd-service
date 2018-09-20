@@ -13,6 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * @author Amitabha Das [420652]
+ *
+ */
 @Entity
 @Table(name = "TASK_TABLE")
 public class TaskEntity implements Serializable {

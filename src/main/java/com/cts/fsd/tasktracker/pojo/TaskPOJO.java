@@ -5,6 +5,10 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Amitabha Das [420652]
+ *
+ */
 @Component
 public class TaskPOJO {
 	

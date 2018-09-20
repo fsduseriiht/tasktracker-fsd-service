@@ -18,6 +18,10 @@ import com.cts.fsd.tasktracker.service.ParentTaskService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * @author Amitabha Das [420652]
+ *
+ */
 @RestController
 @RequestMapping("/parent")
 @CrossOrigin("*")
@@ -27,6 +31,10 @@ public class ParentTaskTrackerController {
 	ParentTaskService parentTaskService;
 	
 	
+	/**
+	 * createParentTaskDump() is used to create a data dump in the db if the db is empty
+	 * @return ResponseEntity<String>
+	 */
 	@RequestMapping(value = "/dump", method = RequestMethod.GET)
 	public ResponseEntity<String> createParentTaskDump() {
 		
@@ -43,6 +51,10 @@ public class ParentTaskTrackerController {
 		return new ResponseEntity<String>("Parent Task Dumps Saved to Database..." + dbResponse , HttpStatus.OK);
 	}
 	
+	/**
+	 * listParentTasks() is used to display all the ParentTask Entity values in the db
+	 * @return ResponseEntity<List<ParentTaskPOJO>>
+	 */
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<List<ParentTaskPOJO>> listParentTasks() {
 		
@@ -54,6 +66,11 @@ public class ParentTaskTrackerController {
     }
 	
 	
+	/**
+	 * createParentTask() is used to create a parent task in  the db
+	 * @param parentTaskPOJO
+	 * @return ResponseEntity<String>
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
 	public ResponseEntity<String> createParentTask(
 							@RequestBody ParentTaskPOJO parentTaskPOJO	) {
@@ -73,6 +90,12 @@ public class ParentTaskTrackerController {
 	}
 	
 	
+	/**
+	 * updateParentTask() is used to update a parent task int the db
+	 * @param parentId
+	 * @param parentTaskPOJO
+	 * @return ResponseEntity<String>
+	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = "application/json")
 	public ResponseEntity<String> updateParentTask( 
 			@PathVariable(value = "id") int parentId ,
@@ -94,6 +117,11 @@ public class ParentTaskTrackerController {
 	}
 	
 	
+	/**
+	 * deleteParentTask() is used to delete a parent task from the db
+	 * @param parentId
+	 * @return ResponseEntity<String>
+	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<String> deleteParentTask( 
 			@PathVariable(value = "id") int parentId ) {

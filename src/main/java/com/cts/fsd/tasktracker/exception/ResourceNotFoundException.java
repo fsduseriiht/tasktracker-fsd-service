@@ -3,6 +3,10 @@ package com.cts.fsd.tasktracker.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+/**
+ * @author Amitabha Das [420652]
+ *
+ */
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class ResourceNotFoundException extends RuntimeException {
 	
