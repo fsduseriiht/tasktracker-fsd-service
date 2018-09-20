@@ -2,15 +2,11 @@
 
 
 
-
-
-
 ### useful links related to docker:
-https://docs.docker.com/docker-cloud/builds/push-images/
-https://docs.docker.com/docker-hub/builds/
-https://hub.docker.com/r/amitabhadockerwork/
+<br> https://docs.docker.com/docker-cloud/builds/push-images/
+<br> https://docs.docker.com/docker-hub/builds/
+<br> https://hub.docker.com/r/amitabhadockerwork/
 
-
-Docker build commands
-docker pull amitabhadockerwork/ui-layer-fsd
-docker pull amitabhadockerwork/service-layer-fsd
+### Docker build commands
+<br>  docker pull amitabhadockerwork/ui-layer-fsd
+<br>  docker pull amitabhadockerwork/service-layer-fsd
