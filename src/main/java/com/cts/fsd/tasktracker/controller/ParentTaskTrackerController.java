@@ -27,7 +27,7 @@ public class ParentTaskTrackerController {
 	ParentTaskService parentTaskService;
 	
 	
-	@RequestMapping(value = "/create/dump", method = RequestMethod.GET)
+	@RequestMapping(value = "/dump", method = RequestMethod.GET)
 	public ResponseEntity<String> createParentTaskDump() {
 		
 		Gson gson = new Gson();
@@ -54,7 +54,7 @@ public class ParentTaskTrackerController {
     }
 	
 	
-	@RequestMapping(value = "/create", method = RequestMethod.POST, consumes = "application/json")
+	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
 	public ResponseEntity<String> createParentTask(
 							@RequestBody ParentTaskPOJO parentTaskPOJO	) {
 		
@@ -73,7 +73,7 @@ public class ParentTaskTrackerController {
 	}
 	
 	
-	@RequestMapping(value = "/edit/{id}", method = RequestMethod.PUT, consumes = "application/json")
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = "application/json")
 	public ResponseEntity<String> updateParentTask( 
 			@PathVariable(value = "id") int parentId ,
 			@RequestBody ParentTaskPOJO parentTaskPOJO	) {
@@ -94,7 +94,7 @@ public class ParentTaskTrackerController {
 	}
 	
 	
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<String> deleteParentTask( 
 			@PathVariable(value = "id") int parentId ) {
 

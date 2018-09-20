@@ -1,14 +1,14 @@
 {
 	"variables": [],
 	"info": {
-		"name": "TaskTracker",
-		"_postman_id": "e56e8c77-5810-1bab-1338-424a0abdd376",
+		"name": "192.168.99.100 - docker - TaskTracker",
+		"_postman_id": "798493bb-d95c-8637-17dc-53e5154224fa",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "task/create/dump",
+			"name": "task/dump",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -19,7 +19,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -31,7 +31,7 @@
 				}
 			],
 			"request": {
-				"url": "{{baseurl}}task/create/dump",
+				"url": "{{baseurl}}task/dump",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -51,7 +51,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -72,7 +72,7 @@
 			"response": []
 		},
 		{
-			"name": "task/create",
+			"name": "task/",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -83,7 +83,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -95,7 +95,7 @@
 				}
 			],
 			"request": {
-				"url": "{{baseurl}}task/create",
+				"url": "{{baseurl}}task/",
 				"method": "POST",
 				"header": [
 					{
@@ -106,14 +106,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"taskId\": 16,\n    \"task\": \"TaskName6\",\n    \"parentId\": 105,\n    \"parentTask\": \"ParentTask5\",\n    \"startDate\": \"2018-09-08T18:30:00.000+0000\",\n    \"endDate\": \"2018-09-08T18:30:00.000+0000\",\n    \"priority\": 10\n}"
+					"raw": "{\n   \n    \"task\": \"TaskName16\",\n    \"parentId\": 105,\n    \n    \"startDate\": \"2018-09-08T18:30:00.000+0000\",\n    \"endDate\": \"2018-09-08T18:30:00.000+0000\",\n    \"priority\": 10\n}"
 				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": "task/edit/{id}",
+			"name": "task/{id}",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -124,7 +124,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -141,12 +141,11 @@
 			],
 			"request": {
 				"url": {
-					"raw": "{{baseurl}}task/edit/:taskId",
+					"raw": "{{baseurl}}task/:taskId",
 					"host": [
 						"{{baseurl}}task"
 					],
 					"path": [
-						"edit",
 						":taskId"
 					],
 					"query": [],
@@ -174,7 +173,7 @@
 			"response": []
 		},
 		{
-			"name": "task/delete/:taskId",
+			"name": "task/:taskId",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -185,7 +184,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -202,12 +201,11 @@
 			],
 			"request": {
 				"url": {
-					"raw": "{{baseurl}}task/delete/:taskId",
+					"raw": "{{baseurl}}task/:taskId",
 					"host": [
 						"{{baseurl}}task"
 					],
 					"path": [
-						"delete",
 						":taskId"
 					],
 					"query": [],
@@ -235,7 +233,7 @@
 			"response": []
 		},
 		{
-			"name": "parent/create/dump",
+			"name": "parent/dump",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -246,7 +244,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -258,7 +256,7 @@
 				}
 			],
 			"request": {
-				"url": "{{baseurl}}parent/create/dump",
+				"url": "{{baseurl}}parent/dump",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -278,7 +276,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -299,7 +297,7 @@
 			"response": []
 		},
 		{
-			"name": "parent/create",
+			"name": "parent/",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -310,7 +308,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -322,7 +320,7 @@
 				}
 			],
 			"request": {
-				"url": "{{baseurl}}parent/create",
+				"url": "{{baseurl}}parent/",
 				"method": "POST",
 				"header": [
 					{
@@ -340,7 +338,7 @@
 			"response": []
 		},
 		{
-			"name": "parent/edit/{id}",
+			"name": "parent/{id}",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -351,7 +349,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -368,12 +366,11 @@
 			],
 			"request": {
 				"url": {
-					"raw": "{{baseurl}}parent/edit/:parentId",
+					"raw": "{{baseurl}}parent/:parentId",
 					"host": [
 						"{{baseurl}}parent"
 					],
 					"path": [
-						"edit",
 						":parentId"
 					],
 					"query": [],
@@ -401,7 +398,7 @@
 			"response": []
 		},
 		{
-			"name": "parent/delete/:parentId",
+			"name": "parent/:parentId",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -412,7 +409,7 @@
 							"// var apiUrl = \"\";",
 							"",
 							"//For Local Machine Testing",
-							"var domain = \"localhost\";",
+							"var domain = \"192.168.99.100\";",
 							"var port = \"8080\";",
 							"var appContext = \"tasktrackerbackend\";",
 							"var apiUrl = \"http://\" + domain + \":\" + port +\"/\" + appContext + \"/\";",
@@ -429,12 +426,11 @@
 			],
 			"request": {
 				"url": {
-					"raw": "{{baseurl}}parent/delete/:parentId",
+					"raw": "{{baseurl}}parent/:parentId",
 					"host": [
 						"{{baseurl}}parent"
 					],
 					"path": [
-						"delete",
 						":parentId"
 					],
 					"query": [],

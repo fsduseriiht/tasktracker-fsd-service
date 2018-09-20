@@ -27,7 +27,7 @@ public class TaskTrackerController {
 	TaskService taskService;
 	
 	
-	@RequestMapping(value = "/create/dump", method = RequestMethod.GET)
+	@RequestMapping(value = "/dump", method = RequestMethod.GET)
 	public ResponseEntity<String> createTaskDump() {
 		Gson gson = new Gson();
 		
@@ -56,7 +56,7 @@ public class TaskTrackerController {
 	
 	
 	
-	@RequestMapping(value = "/create", method = RequestMethod.POST, consumes = "application/json")
+	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
 	public ResponseEntity<String> createTask(
 							@RequestBody TaskPOJO taskPOJO	) {
 		
@@ -75,7 +75,7 @@ public class TaskTrackerController {
 		return new ResponseEntity<String>("New Task Saved to Database..." + dbResponse , HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/edit/{id}", method = RequestMethod.PUT, consumes = "application/json")
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = "application/json")
 	public ResponseEntity<String> updateTask(
 												@PathVariable(value = "id") int taskId , 
 												@RequestBody TaskPOJO taskPOJO			) {
@@ -97,7 +97,7 @@ public class TaskTrackerController {
 	
 	
 	
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<String> deleteTask( 
 											@PathVariable(value = "id") int taskId ) {
 
