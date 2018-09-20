@@ -18,6 +18,10 @@ import com.cts.fsd.tasktracker.entity.TaskEntity;
 @Repository
 public interface TaskRepository extends JpaRepository<TaskEntity, Long>{
 
+	/**
+	 * Deletes a specific Task Record from the Task Table based on a task id
+	 * @param taskId
+	 */
 	@Transactional
     @Modifying
     @Query("delete from TaskEntity t where t.taskId=:id")

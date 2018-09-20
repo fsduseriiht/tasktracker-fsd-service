@@ -19,6 +19,10 @@ import com.cts.fsd.tasktracker.entity.ParentTaskEntity;
 public interface ParentTaskRepository extends JpaRepository<ParentTaskEntity, Long>{
 	
 	
+	/**
+	 * Deletes a specific ParentTask Record from the Task Table based on a parent id
+	 * @param parentId
+	 */
 	@Transactional
     @Modifying
     @Query("delete from ParentTaskEntity p where p.parentId=:id")
